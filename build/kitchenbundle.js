@@ -10351,12 +10351,15 @@ return jQuery;
 
     // socket connection to listen to orders
     socket.on("create message", function(orders) {
+        var oid = orders["0"].order_id;
         var checkDiv = document.getElementById("order-" + orders["0"].order_id);
 
         if (totalOrder < 10 && orderCount < 10 && checkDiv == null) {
             getItems(orders["0"].item_code, orders["0"].items, orders["0"].order_id);
 
             //totalOrder++;
+
+            updateOrders(oid);
         }
     });
 
@@ -10371,7 +10374,6 @@ return jQuery;
                 count: count
             },
             success:function(resp) {
-                console.log(resp);
                 var orderids = [];
 
                 for (key in resp) {
@@ -10385,8 +10387,7 @@ return jQuery;
                 }
 
                 updateOrders(orderids);
-            },
-            async: true
+            }
         });
     }
 
@@ -10468,15 +10469,20 @@ return jQuery;
                     quantity: quantity 
                 },
                 success:function(resp) {
+                    console.log(resp);
+
                     if (resp.status == "fail") {
                         alert("You don't have enough");
                     } else if (resp.status == "success") {
+						console.log(resp.item_code)
+						console.log(resp.prep_id)
                         var qtyDiv = document.getElementById("qty-" + resp.item_code + "-" + resp.prep_id);
                         var itemDiv = document.getElementById("item-" + resp.item_code + "-" + resp.prep_id);
 
                         if (resp.quantity > 0) {
                             qtyDiv.innerHTML = "Quantity: " + resp.quantity;
                         } else {
+							console.log("here")
                             itemDiv.parentNode.removeChild(itemDiv);
                         }
 
@@ -10535,7 +10541,8 @@ return jQuery;
                             }
                         })
                     }
-                }
+                },
+				async: true
             });
         });
     }
@@ -10578,6 +10585,7 @@ return jQuery;
                 quantity: qty
             },
             success:function(resp) {
+				console.log(resp.item_code)
                 controllerDiv.style.display = "none";
                 loadingDiv.style.display = "inline";
 

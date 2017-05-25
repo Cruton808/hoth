@@ -128,6 +128,10 @@ h3 {
     font-size: 130% !important;
 }
 
+h2 {
+    font-size: 1.4em !important;
+}
+
 .btn {
     background-color: #333333;
     color: #FDF8FF;
@@ -207,12 +211,9 @@ h3 {
 
 /*XS screen size*/
 @media (max-width: 600px) {
-    #appetizers_holder, #desserts_holder, #drinks_holder, #meals_holder, #about {
-        padding: 100px 100px;
-    }
-    
     .panel {
         width: 250px;
+        margin: 0 auto;
     }
     
     #about-right {

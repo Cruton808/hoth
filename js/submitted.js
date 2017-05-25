@@ -31,7 +31,7 @@ $(document).ready(function() {
             
             socket.emit("send message", resp);
         },
-        async: false
+        async: true
     });
     
     // populate the order processing div
@@ -66,7 +66,7 @@ $(document).ready(function() {
                 currentOrdersDiv.appendChild(orderWrapper);
             }
         },
-        async: false
+        async: true
     });
 
     // listen to incoming orders

@@ -10443,6 +10443,7 @@ return jQuery;
                 totalPrice:totalPrice + tax
             },
             success:function(resp){
+				console.log(orderId)
                 var orderId = resp.id;
 
                 socket.emit("send order", orderId);

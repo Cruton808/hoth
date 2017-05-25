@@ -10,7 +10,7 @@ Updates in Cart:
     5 x hoth_salad
     5 x han_froyo
     
-    Total: $ 90.75
+    Total: $ 264.00
     
     Options:
     eat-in
@@ -24,7 +24,7 @@ module.exports = {
   tags: ['testcase4'],
   'test RebelHanger Full order 3 - update carts then cancel' : function (client) {
     client
-      .url('localhost:10000/')
+      .url('https://rebel-hanger.herokuapp.com/')
       .waitForElementVisible('body', 1000)
       .assert.title('Main Page')
       .maximizeWindow()
@@ -112,7 +112,7 @@ module.exports = {
       
       //Check the total of what we ordered is correct
       .useXpath()
-      .assert.containsText('//*[@id="fb-ot"]', "Order Total: 90.75")
+      .assert.containsText('//*[@id="fb-ot"]', "Order Total: 264.00")
       .pause(1000)
       //revert back to css selector
       .useCss() 

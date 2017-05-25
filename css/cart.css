@@ -12,6 +12,10 @@
     color: white;
 }
 
+#shoppingCartBitch {
+    color: white;
+}
+
 .cart_items {
     margin: 1vh;
     background-color: grey;
@@ -67,7 +71,6 @@
 
 @media (max-height: 550px) {
     #cart {
-        position: absolute;
         height: 500px;
     }
 }

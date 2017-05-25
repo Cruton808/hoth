@@ -3,7 +3,11 @@
 A food ordering web application for the Star Wars Rebel base, on Planet Hoth. 
 
 ## Team Hoth
-R.Chin, R.Guo, C.Lee, A.Mori, F.Zhang
+R.Chin, 
+R.Guo, 
+C.Lee, 
+A.Mori, F.Zhang
+
 For support, please contact us by email <fan.cbest@gmail.com>, <clee565@my.bcit.ca>, or comment on our github page [Hoth](https://github.com/ACIT2910-HOTH/hoth)
 
 ## Getting Started
@@ -29,27 +33,77 @@ A step by step guide for building the environment:
 9. In command prompt type ```node server.js``` *Note: the server will be using port 10000*
 10. Type ```http://localhost:10000``` in a browser to get the server running locally.
 
+
 ## Running the tests
 
 A step by step guide for running tests:
 
-1. Clone to local repo
+1.Run server.js locally on window prompt
+
+2. Clone to local repo
 ```git clone https://github.com/ACIT2910-HOTH/hoth.git```
 
-2. cd into hoth directory
+3. cd into hoth directory
 ```cd hoth```
 
+4. Install all other required packages
+    ```npm install ```
+5. Open a new window prompt and run all functional tests:
+    ```npm test```
+## Functional test cases
 
-3. Install all other required packages
-    ```npm install bcrypt body-parser bootstrap express express-session jquery pg socket.io webkit webpack --save```
+Testcase 1: Testing Sign in page with following information
+    usename: fan.cbest@gmail.com
+    password: fanzhang
+    Click on "SUBMIT" button and look for main page
+    
+Testcase 2: Testing Full order 1 - no updates in cart
+    1 x han_burger
+    1 x hoth_salad
+    1 x han_froyo
+    
+    Total: $ 18.15
+    
+    Options:
+    eat-in
+    im-credit 
+ Testcase 3: Testing Full order 2 - updates in cart
 
-4. Install mocha and zombie:
-    ``` npm install mocha –save```
-5. Install zombie:
-    ```npm install zombie –save```
+    Initial Order:   
+    1 x han_burger
+    1 x hoth_salad
+    1 x han_froyo
+    
+   Updates in Cart:
+    2 x han_burger
+    2 x hoth_salad
+    2 x han_froyo
+    
+    Total: $ 105.60
+    
+    Options:
+    eat-in
+    im-credit 
 
-6. Run all functional tests:
-    ```mocha test/functional/pagetest.js```
+Testcase 4: Testing Full order 3 - updates in cart then cancel
+
+initial Order:   
+    1 x han_burger
+    1 x hoth_salad
+    1 x han_froyo
+    
+Updates in Cart:
+    5 x han_burger
+    5 x hoth_salad
+    5 x han_froyo
+    
+    Total: $ 264.00
+    
+    Options:
+    eat-in
+    im-credit 
+    
+    Cancel in the end
 
 ## Built With
 
@@ -62,7 +116,7 @@ A step by step guide for running tests:
 
 ## License
 
-This project has no license
+No License
 
 ## Acknowledgments
 

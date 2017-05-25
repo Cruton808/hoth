@@ -7,7 +7,7 @@ module.exports = {
   tags: ['testcase1'],
   'test RebelHanger Signin page' : function (client) {
     client
-      .url('localhost:10000/signin')
+      .url('https://rebel-hanger.herokuapp.com/signin')
       .waitForElementVisible('body', 1000)
       .assert.title('Sign in')
       .maximizeWindow()

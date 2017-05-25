@@ -10365,7 +10365,7 @@ return jQuery;
             
             socket.emit("send message", resp);
         },
-        async: false
+        async: true
     });
     
     // populate the order processing div
@@ -10400,7 +10400,7 @@ return jQuery;
                 currentOrdersDiv.appendChild(orderWrapper);
             }
         },
-        async: false
+        async: true
     });
 
     // listen to incoming orders

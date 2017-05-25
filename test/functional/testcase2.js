@@ -14,7 +14,7 @@ module.exports = {
   tags: ['testcase2'],
   'test RebelHanger Full order 1' : function (client) {
     client
-      .url('localhost:10000/')
+      .url('https://rebel-hanger.herokuapp.com/')
       .waitForElementVisible('body', 1000)
       .assert.title('Main Page')
       .maximizeWindow()
@@ -75,7 +75,7 @@ module.exports = {
       
       //Check the total of what we ordered is correct
       .useXpath()
-      .assert.containsText('//*[@id="fb-ot"]', "Order Total: 18.15")
+      .assert.containsText('//*[@id="fb-ot"]', "Order Total: 52.80")
       .pause(1000)
       //revert back to css selector
       .useCss() 
